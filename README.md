@@ -1,2 +1,30 @@
 # ReBar
-Overlays percentage text on the Personal Resource Display (PRD)
+-------------------------------------------------------------------------------
+-- ReBar.lua  v3.3
+-- Overlays percentage text on the Personal Resource Display (PRD).
+-- WoW 12.0.5. No libraries. Minimal. Click-through.
+--
+-- Group-size note: this addon only ever reads the PLAYER's own PRD bars and
+-- never iterates party/raid members, so its cost is constant regardless of
+-- group size (1 to 40 players) - it does the same tiny amount of work always.
+--
+-- Secret-value note: UnitHealthPercent / UnitPowerPercent can return protected
+-- "secret" values during some encounters. All reads are pcall-guarded and fall
+-- back to ratio math; if a value is secret and unusable, the text simply isn't
+-- updated that tick rather than erroring. Display-only, so this degrades
+-- gracefully.
+--
+-- Frame paths (confirmed working, matching the PRDNumbers reference addon):
+--   PRD frame:   _G.PersonalResourceDisplayFrame
+--   Health bar:  PersonalResourceDisplayFrame.HealthBarsContainer.healthBar
+--   Power bar:   PersonalResourceDisplayFrame.PowerBar
+--   Alt power:   PersonalResourceDisplayFrame.AlternatePowerBar
+--
+-- Overlay model (also from the reference): a child frame parented directly to
+-- each bar at frame level +1 with a FontString. No strata overrides, no
+-- reparenting to UIParent, no screen-coordinate math. The overlay reference is
+-- stored ON the bar (bar.ReBarOverlay) so re-caching updates in place
+-- instead of rebuilding (which avoids the rapid create/destroy error loop).
+--
+-- SLASH: /rebar   options    /rebar debug   toggle debug    /rebar scan   re-cache
+-------------------------------------------------------------------------------

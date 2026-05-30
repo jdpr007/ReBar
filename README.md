@@ -106,3 +106,9 @@ Because ReBar is display-only, this degradation is harmless — at worst, a numb
 ## License
 
 See the `LICENSE` file in this repository.
+
+---
+
+## Coding disclosure
+
+This project was entirely vibe coded using Claude Opus 4.8. The addon — including its frame discovery, overlay logic, options panel, and documentation — was developed iteratively in conversation with the model rather than hand-written line by line.

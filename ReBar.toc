@@ -1,0 +1,11 @@
+## Interface: 120005
+## Title: ReBar
+## Notes: Overlays percentage text on Personal Resource Bars. Type /rebar for options.
+## Author: Custom
+## Version: 3.3.0
+## SavedVariables: ReBarDB
+## DefaultState: enabled
+## Category-enUS: Interface Enhancements
+## IconTexture: 132058
+
+ReBar.lua

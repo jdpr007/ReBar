@@ -4,6 +4,7 @@
 
 ReBar adds clean, readable percentage numbers on top of the health, power, and class/alternate resource bars that float beneath your character. It is intentionally small and focused — no menus you'll never use, no libraries, no bloat. Just percentages where you want them.
 
+- **Version:** `3.3.0`
 - **Game version:** World of Warcraft `12.0.5`
 - **Dependencies:** None
 - **Footprint:** A single Lua file, no embedded libraries
@@ -97,6 +98,7 @@ Because ReBar is display-only, this degradation is harmless — at worst, a numb
 
 ## Compatibility
 
+- ReBar version **3.3.0**.
 - Built and tested for World of Warcraft **12.0.5**.
 - Uses only current, non-deprecated interface APIs.
 - No external libraries are bundled or required.
